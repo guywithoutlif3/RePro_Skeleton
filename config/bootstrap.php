@@ -26,7 +26,7 @@ $container->set('database', function () {
         'password' => ''
     ]);
 });
-
+//NOT NEEDED IN CURRENT STATE OF DEV
 // Create App instance and tell it its name and how long it lasts
 $app = $container->get(App::class);
 $app->add(
@@ -48,7 +48,6 @@ $container->set('session', function () {
 (require __DIR__ . '/routes/create.php')($app);
 (require __DIR__ . '/routes/delete.php')($app);
 (require __DIR__ . '/routes/select.php')($app);
-(require __DIR__ . '/routes/login.php')($app);
 (require __DIR__ . '/routes/update.php')($app);
 
 // Register middleware file

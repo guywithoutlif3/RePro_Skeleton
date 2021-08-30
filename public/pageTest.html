@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]>      <html class="no-js"> <!--<![endif]-->
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title></title>
+    <meta name="description" content="" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="" />
+  </head>
+  <body>
+  <div>Example site: press f12 to check console and then your database for results :D</div>
+    <script>
+      
+    //example for an fetch / get of the backend api. Returns JSON to do smt with  
+      fetch(`/menu`)
+      .then((res) => res.json())
+      .then((data) => {
+        console.log(data); 
+      })
+      
+      // example for an POST method for creating
+      fetch(`/menu/add`,{
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          Name: 'test',
+        }),
+      }).catch(function (error) {
+        console.log(error);
+      });
+      
+      // example for an call to DELETE with parameter
+      fetch(`/menu/delete/test1`)
+      .then((res) => res.json())
+      .then((data) => {
+        console.log(data);
+      })
+      
+      //example for UPDATE
+      fetch(`/menu/update`,{
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          NameNew: 'pee pee poo poo',
+          Name: 'Pizza',
+        }),
+      }).catch(function (error) {
+        console.log(error);
+      });
+
+
+    </script>
+  </body>
+</html>
+
+
